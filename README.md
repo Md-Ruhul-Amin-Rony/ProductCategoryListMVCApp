@@ -27,9 +27,7 @@ SQL Server for database storage.
 4.Run the following command in the Package Manager Console to apply migrations and create the database:
 ![image](https://github.com/Md-Ruhul-Amin-Rony/ProductCategoryListMVCApp/assets/112938703/ab820608-da91-4473-b216-cf19714fdad9)
 
-bash
-Copy code
-Update-Database
+
 5.Build and run the application.
 
 ### Usage
