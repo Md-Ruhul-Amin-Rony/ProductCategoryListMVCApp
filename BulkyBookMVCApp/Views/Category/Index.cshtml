@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "Index";
+}
+@*<partial name="_Notification" />*@ // @*etake ekn _Layout.cshtml e niye jawa hoise jeno sob page e kaj kore*@
+
+@*we have to write it @model with small letter and that is how our view knows that whatever we recieve
+here wil be an IEnumerable of Category.Since it is INumerable, we can iterate through that.*@
+
+@*<h1>Index Category</h1>*@
+@*//let us add a little more designing with Bootstrap and that is why we will comment this h1 tag*@
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Category List</h2>
+
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-square-dotted"></i> &nbsp; Create New Category
+            </a>
+
+        </div>
+       @* //we will use a icon on "Create New Category" and that is why we can use "https://icons.getbootstrap.com/?q=add"
+        then you need to click "install" button and and go down to CDN and copy link and goto "_Layout.cshtml"
+        and on head we need to paste this stylesheet so that we can use icons. after adding this new category 
+        icon then we have to go to "Category controller" and make a new 'action' to create new category*@
+
+    </div>
+    <br /><br />
+
+
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Category Name
+            </th>
+            <th>
+                Display Order
+            </th>
+            <th></th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var obj in Model) //here should be model with Big "M".
+        {
+            <tr>
+                <td width="50%">
+                    @obj.Name
+                </td>
+                <td width="30%">
+                    @obj.DisplayOrder
+                </td>
+                <td> 
+                    <div class="w-75 btn-group" role="group" >
+                        <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id"
+                        class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i> Edit</a>
+                            <a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id"
+                           class="btn btn-danger mx-2"><i class="bi bi-trash-fill"></i> Delete</a>
+
+                    </div>
+
+                </td>
+            </tr>
+            //to make this page look beautiful we will use bootstrap now and for this we will use "bootswatch.com"
+            //where we will get different bottstraps theme with code and we will use "Solar theme" for our project
+            // then we have to copy the theme code and then use that css code 'wwwroot' folder and under css folder
+            //we should take a 'style sheet' and named it bootswatchtheme and paste it and save it.
+            //then we have to use this theme in _Layout.chtml. In the head of _Layout.cshtml we have to link our 
+            //"bootswachTheme" and for doing this we need to go to "getbootstraap.com" then tryck on 'Getting started',
+            // and then tryck "Introduction" and then select version which is 'Bootstrap v5.0' for us and then copy
+            //JS bundle script there and on _Layout.cshtml file on footer we need to paste this script
+            // Then we will go to the "Solar theme" again and go to preview and select the code for NavBar and paste it on
+            //the head of _Layout.cshtml file where our actual navbar exist and anpassa det.
+
+        }
+
+    </tbody>
+</table>
+</div>
