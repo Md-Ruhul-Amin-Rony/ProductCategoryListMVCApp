@@ -6,9 +6,9 @@ This is an MVC web application that manages product categories. It includes feat
   - Create Page: Allows you to create a new category.
   - Edit Page: Lets you edit an existing category.
   - Delete Page: Allows you to delete a category.
-  - ###### Client-Side Validation: Validates form data on the client side for a better user experience.
-  - ###### Server-Side Validation: Ensures data integrity and security.
-  - ###### TempData: Displays success and error messages.
+  - ##### Client-Side Validation: Validates form data on the client side for a better user experience.
+  - ##### Server-Side Validation: Ensures data integrity and security.
+  - ##### TempData: Displays success and error messages.
   - ##### Partial View: Utilizes a partial view to keep code DRY (Don't Repeat Yourself).
   - ##### Toastr Alerts: Provides user-friendly alert messages.
 ## Prerequisites
